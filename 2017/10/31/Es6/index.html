@@ -5,14 +5,17 @@
   
   <title>Es6 | 小生有话说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="let和const命令1. let命令 基本用法Es6 新增了let命令 用来声明变量。用法类似Es5的var 但是其所声明的变量 只在let命令所在的代码快内有效123456&amp;#123; let a = 10; var b = 10;&amp;#125;a //报错 not definedb //1 分别用let 和 var 声明的变量 在代码快之外调用 只有var是正确的 因为 let只在它所在的代码">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Es6">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/Es6/index.html">
 <meta property="og:site_name" content="小生有话说">
+<meta property="og:description" content="let和const命令1. let命令 基本用法Es6 新增了let命令 用来声明变量。用法类似Es5的var 但是其所声明的变量 只在let命令所在的代码快内有效123456&amp;#123; let a = 10; var b = 10;&amp;#125;a //报错 not definedb //1 分别用let 和 var 声明的变量 在代码快之外调用 只有var是正确的 因为 let只在它所在的代码">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-10-31T06:42:45.238Z">
+<meta property="og:updated_time" content="2017-11-02T09:15:32.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Es6">
+<meta name="twitter:description" content="let和const命令1. let命令 基本用法Es6 新增了let命令 用来声明变量。用法类似Es5的var 但是其所声明的变量 只在let命令所在的代码快内有效123456&amp;#123; let a = 10; var b = 10;&amp;#125;a //报错 not definedb //1 分别用let 和 var 声明的变量 在代码快之外调用 只有var是正确的 因为 let只在它所在的代码">
   
     <link rel="alternate" href="/atom.xml" title="小生有话说" type="application/atom+xml">
   
@@ -50,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,11 +86,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h1><h3 id="1-let命令"><a href="#1-let命令" class="headerlink" title="1. let命令"></a>1. let命令</h3><hr>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>Es6 新增了let命令 用来声明变量。用法类似Es5的var 但是其所声明的变量 只在let命令所在的代码快内有效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> let a = 10;</div><div class="line"> var b = 10;</div><div class="line">&#125;</div><div class="line">a //报错 not defined</div><div class="line">b //1</div></pre></td></tr></table></figure></p>
+<p>分别用let 和 var 声明的变量 在代码快之外调用 只有var是正确的 因为 let只在它所在的代码块有效</p>
+<p>for 循环的计数器 很适合用let 命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(let i =0; i&lt;10;i++)&#123;</div><div class="line">//</div><div class="line">&#125;</div><div class="line">console.log(i) // not defined 拿不到i 只在for循环内有效</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>var 出来的变量会发生变量提升 即变量可以在声明之前使用<br>let 的变量不行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// var 的情况</div><div class="line">console.log(a) // 2</div><div class="line">var a = 2;</div><div class="line">// let 的情况</div><div class="line">console.log(b) //报错</div><div class="line">let b = 1;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>  只要快级作用域内存在let命令 它所声明的变量就“绑定”了这个区域，不再受外部的影响<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var tmp =&apos;123&apos;;</div><div class="line">if(true)&#123;</div><div class="line"> tmp = &apos;dwa&apos;; //报错</div><div class="line"> let tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>虽然存在var声明的全局变量tmp 但是if内部又let一个局部变量tmp<br>导致这个tmp绑定了这个if内的作用域 所以在let声明变量前 tmp报错<br>总之在代码快内 使用let命令声明变量之前该变量都是不可用的 这在语法上称为“暂时性死区”</p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let 不允许在相同的作用域内 重复声明同一个变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//报错</div><div class="line"> function func()&#123;</div><div class="line">  let a = 10;</div><div class="line">  var a =1; </div><div class="line"> &#125;</div><div class="line"> //报错</div><div class="line"> function func()&#123;</div><div class="line">  let a = 10;</div><div class="line">  let a = 1; </div><div class="line"> &#125;</div><div class="line"> // 不能在函数内部重新声明参数</div><div class="line">  function (arg)&#123;</div><div class="line">  	let arg;//报错</div><div class="line">  	&#123;</div><div class="line">  		left arg;//不报错</div><div class="line">  	&#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-块级作用域"><a href="#2-块级作用域" class="headerlink" title="2. 块级作用域"></a>2. 块级作用域</h3><h3 id="为什么需要块级作用域"><a href="#为什么需要块级作用域" class="headerlink" title="为什么需要块级作用域"></a>为什么需要块级作用域</h3><p>ES5 只有在全局作用域和函数作用域 没有块级作用域 这带来很多不合理的场景<br>the one 内层变量覆盖外层变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var tmp = new Date();</div><div class="line"> function f()&#123;</div><div class="line">  console.log(tmp);</div><div class="line">  if(false)&#123;</div><div class="line">  	var tmp = &apos;321&apos;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> f() //undefined;</div></pre></td></tr></table></figure></p>
+<p>ES6 的块级作用域<br>let 实际上为JavaScript 新增了跨级作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function f1()&#123;</div><div class="line">	let n = 5;</div><div class="line">	if(true)&#123;</div><div class="line">	let n = 10;</div><div class="line"> &#125;</div><div class="line"> 	console.log(n) //5</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面代码中都声明了n 但是因为块级作用域的存在 外层代码不受内层影响<br>如果都是var 声明的 则是10；<br>ES6 允许跨级作用域的任意嵌套<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#123;&#123;&#123;&#123;&#123;let name=&apos;wang&apos;&#125;&#125;&#125;&#125;&#125;&#125;&#125;</div><div class="line">&#123;&#123;&#123;&#123;&#123;&#123;</div><div class="line">	&#123;let one =&apos;1&apos;&#125;</div><div class="line">	console.log(one)//报错</div><div class="line">	&#125;&#125;&#125;&#125;&#125;&#125;</div><div class="line">&#123;&#123;&#123;&#123;&#123;&#123;</div><div class="line">	&#123;let one =&apos;1&apos;&#125;</div><div class="line">	let one =&apos;2&apos;</div><div class="line">	&#125;&#125;&#125;&#125;&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>——————————————————————————————————————</p>
+<h3 id="3-const-命令"><a href="#3-const-命令" class="headerlink" title="3. const 命令"></a>3. const 命令</h3><hr>
+<h3 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h3><p>const 声明一个只读的常量。一旦声明 常量的值就不能改变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const PI = 3.1415;</div><div class="line">PI//3.1415</div><div class="line">PI = 3 //报错</div></pre></td></tr></table></figure></p>
+<p>const 声明的变量不得改变值 这意味着 一旦声明变量 就必须立即初始化 不能留到以后赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const foo;</div><div class="line">//报错 要立即初始化;</div></pre></td></tr></table></figure></p>
+<p>const 的作用域与let命令相同 只在声明所在的块级作用域内有效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if(true)&#123;</div><div class="line"> const max =5;</div><div class="line">&#125;</div><div class="line">max //报错 not defined;</div></pre></td></tr></table></figure></p>
+<p>此外 const命令的变量与let变量一致（不可重复声明，不存在变量提升存在暂时性死区）</p>
+<h1 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h1><h3 id="1-数组得到解构赋值"><a href="#1-数组得到解构赋值" class="headerlink" title="1. 数组得到解构赋值"></a>1. 数组得到解构赋值</h3><hr>
+<h3 id="基本用法-2"><a href="#基本用法-2" class="headerlink" title="基本用法"></a>基本用法</h3><p>es6 允许按照一定模式 从数组和对象中提取值 对变量进行赋值 这被称为解构<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let [a,b,c] = [1,2,3];</div></pre></td></tr></table></figure></p>
+<p>按照对应位置 对变量进行赋值<br>下面是一些常见的使用嵌套数组进行解构的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">let [foo,[[bar],baz]] = [1,[[2],3]]</div><div class="line">foo //1;</div><div class="line">bar //2</div><div class="line">baz //3</div><div class="line"></div><div class="line">let [,,third] = [&apos;foo&apos;,&apos;bar&apos;,&apos;baz&apos;]</div><div class="line">third // &apos;baz&apos;;</div><div class="line"></div><div class="line">let [x,,y] = [1,2,3]</div><div class="line">x //1;</div><div class="line">y //3;</div><div class="line"></div><div class="line">let [hear,...tail] = [1,2,3]</div><div class="line">hear //1;</div><div class="line">tail [2,3]</div><div class="line"></div><div class="line">let [x,y,...z] = [&apos;a&apos;];</div><div class="line">x //a;</div><div class="line">y //undefined;</div><div class="line">z //[];</div><div class="line"></div><div class="line">let [foo] = [];</div><div class="line">let [bar,foo] = [1];</div></pre></td></tr></table></figure></p>
+<p>以上最后两种情况解构不成功 就是undefined；</p>
+<p>还有不完全解构 即左边的只匹配部分右边的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let [x,y] = [1,2,3]</div><div class="line">x //1;</div><div class="line">y //2;</div><div class="line"></div><div class="line">let [a,[b],d] = [1,[2,3],4]</div><div class="line">a //1;</div><div class="line">b //2</div><div class="line">d //4</div></pre></td></tr></table></figure></p>
+<p>如果等号右边不是数组 或者不是严格可遍历的解构 那么将会报错</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let [foo = true] = [];</div><div class="line">foo //true;</div><div class="line"></div><div class="line">let [x,y = &apos;b&apos;] = [&apos;a&apos;]; // x =&apos;a&apos; , y = &apos;b&apos;;</div><div class="line">let [x,y = &apos;b&apos;] = [&apos;a&apos;,undefined] // x=&apos;a&apos; y =&apos;b&apos;</div></pre></td></tr></table></figure>
+<p>ES6 内部使用严格相等运算符（===）判断一个位置是否有值。所以 如果一个数组成员不严格等于undefined 默认值不会生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let [x = 1] = [undefined] // x= 1;</div><div class="line">let [ x = 1] = [null]  // x为null</div></pre></td></tr></table></figure></p>
+<p>如果一个数组成员是null 默认值不会生效 一万null 不严格等于undefined</p>
+<p>默认值可以引用解构的其他变量 但该变量必须已经声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let [x = 1, y = x] = [] //x=1,y=1;</div><div class="line">let [x = y, y = 1] = [] //报错 因为y后声明</div></pre></td></tr></table></figure></p>
+<h3 id="2-对象的解构赋值"><a href="#2-对象的解构赋值" class="headerlink" title="2.对象的解构赋值"></a>2.对象的解构赋值</h3><p>同理 解构 可以用于对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let &#123;foo,bar&#125; = &#123;foo:&apos;aaa&apos;,bar:&apos;bbb&apos;&#125; </div><div class="line">foo // &apos;aaa&apos;;</div><div class="line">bar // &apos;bbb&apos;;</div><div class="line"></div><div class="line">let &#123;baz&#125; = &#123;foo:&apos;aaa&apos;,bar:&apos;bbb&apos;&#125;</div><div class="line">baz //undefined;</div></pre></td></tr></table></figure></p>
+<p>对象的解构 与数组的解构不同数组的元素按次序取值 即某个位置取对应位置的值<br>而对象的属性没有次序 变量必须与属性同名才能取到正确的值 如上面最后一例</p>
+<p>对象的解构赋值的内部机制 是先找到同名属性 然后再赋值给对应的变量 真正被赋值的是后者 而不是前者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> let &#123;foo:baz&#125; = &#123;foo:&apos;aaa&apos;,bar:&apos;bbb&apos;&#125;;</div><div class="line"> 	baz //&apos;aaa&apos;</div><div class="line">foo // not defined;</div></pre></td></tr></table></figure></p>
+<p>上面大代码中 foo是匹配的模式 baz才是变量 真正被赋值的是变量baz<br>而不是模式foo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;p:[&apos;hello&apos;,&#123;y:&apos;world&apos;&#125;]&#125;;</div><div class="line">let &#123;p,p:[x,&#123;y&#125;]&#125; =obj;</div><div class="line">x //&apos;hello&apos;;</div><div class="line">y // &apos;world&apos;;</div><div class="line">p //[&apos;hello&apos;,&#123;y:&apos;world&apos;&#125;]</div></pre></td></tr></table></figure>
+<p>第一个p是变量 所以一次匹配值是数组 第二p是匹配模式</p>
+<p>对象的解构也可以指定默认值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var &#123;x = 3&#125; = &#123;&#125;</div><div class="line">x //3;</div><div class="line"></div><div class="line">var &#123;x,y = 5&#125; = &#123;x:1&#125;;</div><div class="line">x //1;</div><div class="line">y //5;</div></pre></td></tr></table></figure></p>
+<p>默认值生效的条件是 对象的属性值 严格等于undefined</p>
+<p>如果讲一个已经声明的变量用于解构赋值 必须非常小心<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let x;</div><div class="line">&#123;x&#125; = &#123;x:1&#125; //报错</div><div class="line">(&#123;x&#125; = &#123;x:1&#125;) //正确</div></pre></td></tr></table></figure></p>
+<h3 id="3-字符串的解构赋值"><a href="#3-字符串的解构赋值" class="headerlink" title="3. 字符串的解构赋值"></a>3. 字符串的解构赋值</h3><p>字符串也可以解构赋值 这是因为此时 字符串 被转换成了一个类似的数组的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const [a,b,c,d] = &apos;hello&apos;;</div><div class="line">a //h;</div><div class="line">b //e;</div><div class="line">c //l;</div><div class="line">d //l</div></pre></td></tr></table></figure></p>
+<p>类似数组的对象都有一个length属性 因此还可以对这个属性解构赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let &#123;length :len&#125; = &apos;hello&apos;;</div><div class="line">len //5;</div></pre></td></tr></table></figure></p>
+<h3 id="4-数值和布尔值的解构赋值"><a href="#4-数值和布尔值的解构赋值" class="headerlink" title="4. 数值和布尔值的解构赋值"></a>4. 数值和布尔值的解构赋值</h3><p>解构赋值时 如果等号右边是数值和布尔值 则会先转为对像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let &#123;toString : s&#125; = 123;</div><div class="line"> s === Number.prototype.toString // true;</div></pre></td></tr></table></figure></p>
+<h3 id="5-函数参数的解构赋值"><a href="#5-函数参数的解构赋值" class="headerlink" title="5.函数参数的解构赋值"></a>5.函数参数的解构赋值</h3><p>函数的参数也可以使用解构赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function add([x,y])&#123;</div><div class="line">	return x+y;</div><div class="line">&#125;</div><div class="line">add([1,2]) //3</div></pre></td></tr></table></figure></p>
+<h3 id="6-圆括号的问题"><a href="#6-圆括号的问题" class="headerlink" title="6.圆括号的问题"></a>6.圆括号的问题</h3><p>一下三种解构赋值不能使用圆括号<br>(1) 变量声明语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//报错</div><div class="line">let [(a)] = [1];</div><div class="line">let &#123;x:(c)&#125; =&#123;&#125;;</div><div class="line">``` </div><div class="line">(2) 函数参数</div></pre></td></tr></table></figure></p>
+<p>  //报错<br>  function f([(z)]){return z};<br>  function f([z,(x)]){return x};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(3) 赋值语句的模式</div></pre></td></tr></table></figure></p>
+<p>({p:a}) = {p:42};<br>([a]) = [5];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">### 可以使用圆括号的情况</div></pre></td></tr></table></figure></p>
+<p>  [(b)] = [3]<br>  ({p:(d)} = {})<br>  [(parseInt.prop)] = [3]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">上面都能正确执行 因为他们是赋值语句 而不是声明语句</div><div class="line">其次他们的圆括号都不属于模式的一部分</div><div class="line"></div><div class="line">###7.用途</div><div class="line">  1.交换变量的值</div></pre></td></tr></table></figure></p>
+<p> let x =1;<br> let y =2;<br> [x,y] =[y,x]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2. 从函数返回多个值</div><div class="line">函数只能返回一个值 如果非要返回多个值 只能将他们放在数组或对象里返回</div></pre></td></tr></table></figure></p>
+<p> //返回一个数组<br>   funxtion ex(){<br>       return [1,2]<br>   }<br>   let [a,b] = ex()<br>   //返回对象<br>   function obj(){<br>    return {foo:1,bar:2}<br>   };<br>   let {foo,bar} = ex()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3.函数参数的定义</div></pre></td></tr></table></figure></p>
+<p>function f([x,y,z]){}<br>f([1,2,3]);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4.提取json数据</div></pre></td></tr></table></figure></p>
+<p> let data ={id:42,status:’ok’};<br> let {id,status} = data;<br>```</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/31/Es6/" data-id="cj9f8ysvq00003gyd09jisuy7" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/10/31/Es6/" data-id="cj9iay5yz0000lwydivopa3fa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -98,7 +151,7 @@
   
   
     <a href="/2017/10/26/my-new-post/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">初识Markdown</div>
     </a>
   
@@ -131,7 +184,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -160,7 +213,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Wang XJ<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
