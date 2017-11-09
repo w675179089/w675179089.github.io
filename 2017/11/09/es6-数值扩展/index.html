@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/10 | 小生有话说</title>
+  <title>es6-数值扩展 | 小生有话说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端新人一枚，记录所学所用">
+  <meta name="description" content="接es6数值扩展">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小生有话说">
-<meta property="og:url" content="http://yoursite.com/archives/2017/10/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6-数值扩展">
+<meta property="og:url" content="http://yoursite.com/2017/11/09/es6-数值扩展/index.html">
 <meta property="og:site_name" content="小生有话说">
-<meta property="og:description" content="前端新人一枚，记录所学所用">
+<meta property="og:description" content="接es6数值扩展">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2017-11-09T08:50:31.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小生有话说">
-<meta name="twitter:description" content="前端新人一枚，记录所学所用">
+<meta name="twitter:title" content="es6-数值扩展">
+<meta name="twitter:description" content="接es6数值扩展">
   
     <link rel="alternative" href="/atom.xml" title="小生有话说" type="application/atom+xml">
   
@@ -158,76 +159,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-es6-数值扩展" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/31/Es6/" class="archive-article-date">
-  	<time datetime="2017-10-31T06:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/31/Es6/">Es6</a>
+    <h1 class="article-title" itemprop="name">
+      es6-数值扩展
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/26/markdown/" class="archive-article-date">
-  	<time datetime="2017-10-26T07:34:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
+        
+        <a href="/2017/11/09/es6-数值扩展/" class="archive-article-date">
+  	<time datetime="2017-11-09T02:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/26/markdown/">初识Markdown</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="接es6"><a href="#接es6" class="headerlink" title="接es6"></a>接es6</h3><h1 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h1><a id="more"></a>
+<h3 id="1-二进制和八进制表示法"><a href="#1-二进制和八进制表示法" class="headerlink" title="1. 二进制和八进制表示法"></a>1. 二进制和八进制表示法</h3><p>es6 提供了二进制和八进制数值的新的写法 分别用前缀0b(或0B)和0o(或0O)表示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">0b111110111 === 504 //true</div><div class="line">0o767 === 503 //true</div></pre></td></tr></table></figure></p>
+<p>从es5开始 在严格模式中 八进制就不再允许使用前缀0表示 es6进一步明确 要使用前缀0o表示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//非严格模式</div><div class="line">(function()&#123;</div><div class="line">	console.log(0o11 === 011);</div><div class="line">&#125;)() //true</div><div class="line">//严格模式</div><div class="line">(function()&#123;</div><div class="line">	&apos;use strict&apos;</div><div class="line">	console.log(0o11 === 011)</div><div class="line">&#125;)() //报错</div></pre></td></tr></table></figure></p>
+<p>如果要将0b和0o前缀的字符串数值转化为十进制 要使用Number()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Number(&apos;0b111&apos;) //7</div><div class="line">Number(&apos;0o10&apos;)  //8</div></pre></td></tr></table></figure></p>
+<h3 id="2-Number-isFinite-Number-isNaN"><a href="#2-Number-isFinite-Number-isNaN" class="headerlink" title="2.Number.isFinite() Number.isNaN()"></a>2.Number.isFinite() Number.isNaN()</h3><p>es6 在number对象上 新提供了Number.isFinite() Number.isNaN() 两个方法<br>Number.isFinite() 用来检查一个数值是否为有限的(finite)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Number.isFinite(15) //true</div><div class="line">Number.isFinite(0.1) //true</div><div class="line">Number.isFinite(NaN) //false</div><div class="line">Number.isFinite(&apos;321&apos;) //false</div><div class="line">Number.isFinite(true) //false</div><div class="line">Number.isFinite(Infinity) //false</div></pre></td></tr></table></figure></p>
+<p>Number.isNaN() 用来检查一个值是否为NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Number.isNaN(NaN) //true</div><div class="line">Number.isNaN(10) //false</div><div class="line">Number.isNaN(&apos;321&apos;) //false</div><div class="line">Number.isNaN(true) //false</div><div class="line">Number.isNaN(1/NaN) //true</div></pre></td></tr></table></figure></p>
+<h3 id="3-Number-parseInt-Number-parseFloat"><a href="#3-Number-parseInt-Number-parseFloat" class="headerlink" title="3.Number.parseInt() Number.parseFloat()"></a>3.Number.parseInt() Number.parseFloat()</h3><p>es6 讲全局方法parseInt() 和parseFloat() 移植到Number对象上面<br>行为完全保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//es5的写法</div><div class="line">parseInt(&apos;12.32&apos;) //12</div><div class="line">parseFloat(&apos;12.13ss&apos;) //12.13</div><div class="line">//es6</div><div class="line">Number.parseInt(&apos;21.34&apos;) //21</div><div class="line">Number.parseFloat(&apos;123.45ds&apos;) //123.45</div></pre></td></tr></table></figure></p>
+<p>这样做的目的 是逐步减少全局性方法 使得语言逐步模块化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Number.parseInt === parseInt //true</div><div class="line">Number.parseFloat === parseFloat //true</div></pre></td></tr></table></figure></p>
+<h3 id="4-Number-isInterger"><a href="#4-Number-isInterger" class="headerlink" title="4.Number.isInterger()"></a>4.Number.isInterger()</h3><p>Number.isInteger() 判断一个值是否整数 需要注意 在JavaScript内部 整数和浮点数是同样的存储方法 所以3和3.0被视为同一个值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Number.isInterger(25) //true</div><div class="line">Number.isInteger(25.0) //true</div><div class="line">Number.isInteger(25.1) //false</div><div class="line">Number.isInteger(&apos;25&apos;) //false</div></pre></td></tr></table></figure></p>
+<h3 id="5-Number-EPSILON"><a href="#5-Number-EPSILON" class="headerlink" title="5. Number.EPSILON"></a>5. Number.EPSILON</h3><p>es6 在number对象上面 新增一个极小的常量 Number.EPSILON 他表示1与大于1的最小浮点书之间的查</p>
+<h3 id="6-安全整数和Number-isSafeInteger"><a href="#6-安全整数和Number-isSafeInteger" class="headerlink" title="6.安全整数和Number.isSafeInteger()"></a>6.安全整数和Number.isSafeInteger()</h3><p>JavaScript 能够准确表示的整数范围在-2^53到2^53之间 不包括端点<br>超过这个范围 无法精确表示这个值</p>
+<p>es6引入了Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER 这两个常量 用了表示这个范围的上下限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Number.MAX_SAFE_INTEGER === Math.pow(2,53) -1 //true</div><div class="line">Number.MAX_SAFE_INTEGER === 9007199254740991 //true</div><div class="line">Number.MAX_SAFE_INTEGER === 9007199254740991 //true</div><div class="line">Number.MIN_SAFE_INTEGER === -Number.MAX_SAFE_INTEGER  //true</div><div class="line">Number.MIN_SAFE_INTEGER === -9007199254740991 //true</div></pre></td></tr></table></figure></p>
+<p>Number.isSafeInteger() 则用来判断一个整数是否落在这个范围内<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Number.isSafeInteger(&apos;a&apos;) //false</div><div class="line">Number.isSafeInteger(null //false</div><div class="line">Number.isSafeInteger(Infinity) //false</div><div class="line">Number.isSafeInteger(-Infinity) //false</div></pre></td></tr></table></figure></p>
+<h3 id="7-Math-对象的扩展"><a href="#7-Math-对象的扩展" class="headerlink" title="7 Math 对象的扩展"></a>7 Math 对象的扩展</h3><p>Math.trunc()<br>Math.trunc() 用于去除一个数的小数部分 返回整数部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Math.trunc(1.1) //1</div><div class="line">Math.trunc(4.9) //4</div><div class="line">Math.trunc(4.9) //4</div><div class="line">Math.trunc(-0.1) //-0</div></pre></td></tr></table></figure></p>
+<p>对于非数值 Math.trunc 内部使用 Number方法将其先转为数值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Math.trunc(&apos;321.213&apos;) //321</div><div class="line">Math.trunc(true) //1</div><div class="line">Math.trunc(false) //0</div><div class="line">Math.trunc(null) //0</div></pre></td></tr></table></figure></p>
+<p>对于空值和无法截取整数的值返回NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Math.trunc(NaN) //NaN</div><div class="line">Math.trunc(NaN) //NaN</div><div class="line">Math.trunc(&apos;foo&apos;) //NaN</div></pre></td></tr></table></figure></p>
+<p>Math.sign()<br>Math.sign() 用来判断一个数到底是正数 负数 还是零 对于非数值 会先转换为数值<br>返回五种数值</p>
+<pre><code>-参数为整数 返回+1
+-参数为负数 返回-1
+-参数为0，返回0；
+-参数为-0返回-0
+-其他值 返回NaN
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Math.sign(-5) //-1;</div><div class="line">Math.sign(5) //+1;</div><div class="line">Math.sign(0) 0;</div><div class="line">Math.sign(-0) -0;</div></pre></td></tr></table></figure>
+<p>如果参数是非数值 自动转换为数值 对于那些无法转为数值的值 会返回NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Math.sign(&apos;&apos;)  //0</div><div class="line">Math.sign(true) //+1</div><div class="line">Math.sign(false) //-1</div><div class="line">Math.sign(true) //+1</div><div class="line">Math.sign(&apos;foo&apos;) //NaN</div></pre></td></tr></table></figure></p>
+<p>Math.cbrt()<br>Math.cbrt()用于计算一个数的立方根<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.cbrt(-1) //-1</div><div class="line">Math.cbrt(8) //2</div></pre></td></tr></table></figure></p>
+<p>Math.clz32()<br>Math.clz32()返回一个数的32位无符号整数形式有多少个前导0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Math.clz32(1000) //22</div><div class="line">Math.clz32(0) // 32</div><div class="line">Math.clz32(1) // 31</div></pre></td></tr></table></figure></p>
+<p>上面代码中，0的二进制形式全为0，所以有32个前导0；1的二进制形式是0b1，只占1位，所以32位之中有31个前导0；1000的二进制形式是0b1111101000，一共有10位，所以32位之中有22个前导0。<br>Math.imul()<br>Math.imul() 返回两个数以32的带位符号整数形式相乘的结果 返回的也是一个32位的带符号整数<br>Math.hypot()<br>Math.hypot()返回所有参数的平方和的平方根<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Math.htpot(3,4) //5</div><div class="line">Math.htpot(3,4,&apos;foo&apos;) //NaN</div><div class="line">Math.htpot(3,4,&apos;5&apos;) //7.0710678118654755</div><div class="line">Math.htpot(-3) //3</div></pre></td></tr></table></figure></p>
+<h3 id="对数方法"><a href="#对数方法" class="headerlink" title="对数方法"></a>对数方法</h3><p> (1)Math.expm1()<br> 返回e^x-1<br> (2) Math.log1p()<br> 返回1+x的自然对数 即Math.log(1+x) 如果x小于-1 返回NaN<br> (3) Math.log10(x)<br> 返回以10为底的x对数 如果x小于0 返回NaN<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Math.log10(2) //0.3010299956639812</div><div class="line">Math.log10(100) //2</div></pre></td></tr></table></figure></p>
+<p> (4) 返回以2为底的x对数 如果x小于0 返回NaN<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Math.log2(4) //2</div></pre></td></tr></table></figure></p>
+<p> 双曲函数方法<br>ES6新增了6个双曲函数方法。</p>
+<p>Math.sinh(x) 返回x的双曲正弦（hyperbolic sine）<br>Math.cosh(x) 返回x的双曲余弦（hyperbolic cosine）<br>Math.tanh(x) 返回x的双曲正切（hyperbolic tangent）<br>Math.asinh(x) 返回x的反双曲正弦（inverse hyperbolic sine）<br>Math.acosh(x) 返回x的反双曲余弦（inverse hyperbolic cosine）<br>Math.atanh(x) 返回x的反双曲正切（inverse hyperbolic tangent</p>
+<h3 id="9指数运算符"><a href="#9指数运算符" class="headerlink" title="9指数运算符(**)"></a>9指数运算符(**)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2**2 //4</div><div class="line">2**3 //8</div></pre></td></tr></table></figure>
+<p>10 Integer 数据类型<br> 因为JavaScript 无法表示大于53位的二进制 所以引入Integer表示 没有位数的限制 任何位数的整数都可以精确表示<br> 为了与Number类型区别 Integer类型数据必须使用后缀n表示<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1n+2n //3n</div></pre></td></tr></table></figure></p>
+<p> 运算<br> 与整数的加减乘 和乘乘(**) 触发会舍去小数部分 返回一个整数<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">9n/5n  //1n</div></pre></td></tr></table></figure></p>
+<p> integer 类型数据不能与number混合运算<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1n+1 //报错</div><div class="line">0n == 0 //报错</div><div class="line">0n == false //报错</div></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/09/es6-数值扩展/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/10/31/Es6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Es6</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -250,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
