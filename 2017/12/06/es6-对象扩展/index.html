@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 小生有话说</title>
+  <title>es6-对象扩展 | 小生有话说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端新人一枚，记录所学所用">
+  <meta name="description" content="接es6-数值扩展对象扩展">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小生有话说">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6-对象扩展">
+<meta property="og:url" content="http://yoursite.com/2017/12/06/es6-对象扩展/index.html">
 <meta property="og:site_name" content="小生有话说">
-<meta property="og:description" content="前端新人一枚，记录所学所用">
+<meta property="og:description" content="接es6-数值扩展对象扩展">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2017-12-11T02:57:28.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小生有话说">
-<meta name="twitter:description" content="前端新人一枚，记录所学所用">
+<meta name="twitter:title" content="es6-对象扩展">
+<meta name="twitter:description" content="接es6-数值扩展对象扩展">
   
     <link rel="alternative" href="/atom.xml" title="小生有话说" type="application/atom+xml">
   
@@ -158,130 +159,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-es6-对象扩展" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      es6-对象扩展
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/06/es6-对象扩展/" class="archive-article-date">
+
+        
+        <a href="/2017/12/06/es6-对象扩展/" class="archive-article-date">
   	<time datetime="2017-12-06T08:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/06/es6-对象扩展/">es6-对象扩展</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="接es6-数值扩展"><a href="#接es6-数值扩展" class="headerlink" title="接es6-数值扩展"></a>接es6-数值扩展</h3><h1 id="对象扩展"><a href="#对象扩展" class="headerlink" title="对象扩展"></a>对象扩展</h1><a id="more"></a>
+<h3 id="1-属性的简洁表示法"><a href="#1-属性的简洁表示法" class="headerlink" title="1.属性的简洁表示法"></a>1.属性的简洁表示法</h3><p>es6 允许直接写入变量和函数 作为对象的属性和方法 这样的书写更加简洁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const foo = &apos;bar&apos;;</div><div class="line">const baz = &#123;foo&#125;;</div><div class="line">baz //&#123;foo:&apos;bar&apos;&#125;</div><div class="line"></div><div class="line">//等同于</div><div class="line">const baz = &#123;foo:foo&#125;</div></pre></td></tr></table></figure></p>
+<p>es6允许在对象之中 直接写变量 这时 属性名为变量名 属性值 为变量的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function f(x,y)&#123;</div><div class="line">	retrun &#123;x,y&#125;</div><div class="line">&#125;</div><div class="line">//等同于</div><div class="line">function f()&#123;</div><div class="line">	return &#123;x:x,y:y&#125;;</div><div class="line">&#125;</div><div class="line">f(1,2) //&#123;x:1,y:2&#125;</div></pre></td></tr></table></figure></p>
+<p>除了属性简写 方法也可以简写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  const o = &#123;</div><div class="line">	method()&#123;</div><div class="line">		return &apos;hello&apos;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">//等同于</div><div class="line">const o = &#123;</div><div class="line">	method:function()&#123;</div><div class="line">		return &apos;hello!&apos;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-属性名表达式"><a href="#2-属性名表达式" class="headerlink" title="2.属性名表达式"></a>2.属性名表达式</h3><p>javascript 定义对象的属性 有两种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//1</div><div class="line">obj.foo = true;</div><div class="line">//2</div><div class="line">obj[&apos;a&apos;+&apos;bc&apos;] = 123;</div></pre></td></tr></table></figure></p>
+<p>es6允许字面量定义对象时 用方法二（表达式）作为对象的属性名 即把表达式放在方括号内<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let propkey = &apos;foo&apos;;</div><div class="line">left obj = &#123;</div><div class="line">	[propkey] : true,</div><div class="line">	[&apos;a&apos;+&apos;bc&apos;] :123</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-方法的name属性"><a href="#3-方法的name属性" class="headerlink" title="3.方法的name属性"></a>3.方法的name属性</h3><p>函数的name属性 返回函数名 对象方法也是函数 因此也有name属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  const person = &#123;</div><div class="line">	sayName()&#123;</div><div class="line">		console.log(&apos;hello!&apos;)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">person.sayName.name //&apos;sayName&apos;</div></pre></td></tr></table></figure></p>
+<p>上面的代码中 方法的name属性返回函数名(即方法名)</p>
+<h3 id="4-Object-is"><a href="#4-Object-is" class="headerlink" title="4.Object.is()"></a>4.Object.is()</h3><p>es5 比较两个值是否相等 只有两个运算符 ==  === 他们都有缺点 欠着会自动转换数据类型 后者的NaN不等于自身 以及+0等于-0<br>es6 提出’same-value-equality’(同值相等)算法 用来解决这个问题<br>Object.is()就是部署这个算法的新方法 它用来比较两个值是否严格相等 与严格比较运算符（===）的行为一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.is(&apos;foo&apos;,&apos;foo&apos;) //true</div><div class="line">Object.is(&#123;&#125;,&#123;&#125;) //false</div></pre></td></tr></table></figure></p>
+<p>不同之处只有两个 一是+0不等于-0 二是NaN等于自身<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//es5</div><div class="line">+0 === -0 //true</div><div class="line">NaN === NaN //false</div><div class="line">//es6</div><div class="line">Object.is(+0,-0) //false</div><div class="line">Object,is(NaN,NaN) //true</div></pre></td></tr></table></figure></p>
+<h3 id="5-Object-assing"><a href="#5-Object-assing" class="headerlink" title="5.Object.assing()"></a>5.Object.assing()</h3><p>基本用法<br>Object.assign 方法用于对象的合并 将源对象的所有可枚举属性 复制到目标对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">const target = &#123;a:1&#125;;</div><div class="line">const source1 = &#123;b:2&#125;;</div><div class="line">const source2 = &#123;c:3&#125;;</div><div class="line">Object.assign(target,source1,source2);</div><div class="line">target //&#123;a:1,b:2,c:3&#125;</div><div class="line"></div><div class="line">//传入undefined和null无法转成对象 报错</div><div class="line">Object.assign(undefined) //报错</div><div class="line">Object.assign(null) //报错</div></pre></td></tr></table></figure></p>
+<p>  注意点<br>  (1)浅拷贝<br>  Object.assign方法实行的是浅拷贝 而不是深拷贝 也就是说 如果源对象某个属性的值是对象<br>  那么目标对象拷贝得到的是这个对象的引用<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const obj1 = &#123;a:&#123;b:1&#125;&#125;;</div><div class="line">const obj2 = Object.assign(&#123;&#125;,obj1);</div><div class="line"></div><div class="line">obj1.a.b = 2;</div><div class="line">obj2.a.b  //2</div></pre></td></tr></table></figure></p>
+<p>  (2)同名属性的替换<br>  对于这种嵌套的对象一旦遇到同名属性 Object.assign的狐狸方法是替换 而不是添加<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">const target = &#123;a:&#123;b:&apos;c&apos;,d:&apos;e&apos;&#125;&#125;</div><div class="line">const source = &#123;a:&#123;b:&apos;hello&apos;&#125;&#125;</div><div class="line">Object.assign(target,source)</div><div class="line">//&#123;a:&#123;b:&apos;hello&apos;&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>  (3)数组的处理<br>  Object.assign  可以用来处理数组 但是会把数组视为对象<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.assign([1,2,3],[4,5]) //[4,5,3]</div></pre></td></tr></table></figure></p>
+<p>  上面代码中 Object.assign把数组视为0,1,2的对象 因此源数组的0号属性4覆盖了目标数组的0号属性1</p>
+<p>  (4)取值函数的处理<br>  Object.assign()只能进行值的复制 如果要复制的值是一个取值函数 那么将求值后 再复制<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const source = &#123;</div><div class="line">	get foo()&#123;return 1&#125;</div><div class="line">&#125;;</div><div class="line">const target = &#123;&#125;;</div><div class="line">Object.assign(target,source) // &#123;foo:1&#125;</div></pre></td></tr></table></figure></p>
+<p>  上面代码中 source对象的foo属性是一个取值函数 Object.assign 不会复制这个取值函数 只会拿到值以后 将这个值复制过去</p>
+<p>  ###常见用途</p>
+<p>  (1) 为对象添加属性<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Point &#123;</div><div class="line">	constructor (x,y)&#123;</div><div class="line">		Object.assign(this,&#123;x,y&#125;)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//将 x 和 y属性添加到Point类的对象实例</div></pre></td></tr></table></figure></p>
+<p>  (2) 为对象添加方法<br>  Object.assign(SomeClass.prototype,{<br>      someMethod(arg1,arg2){<br>          …<br>      },<br>      anotherMethod(){<br>          …<br>      }<br>  })</p>
+<h3 id="6-属性的可枚举性和遍历"><a href="#6-属性的可枚举性和遍历" class="headerlink" title="6 属性的可枚举性和遍历"></a>6 属性的可枚举性和遍历</h3><p>  可枚举性<br>    对象的每个属性都有一个描述对象 用来控制该属性的行为<br>    Object.getOwnPropertyDescriptor 方法可以获得该属性的描述对象。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let obj =&#123;foo:123&#125;;</div></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/06/es6-对象扩展/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/09/es6-数值扩展/" class="archive-article-date">
-  	<time datetime="2017-11-09T02:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/09/es6-数值扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">es6-数值扩展</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/09/es6-数值扩展/">es6-数值扩展</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/31/Es6/" class="archive-article-date">
-  	<time datetime="2017-10-31T06:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/31/Es6/">Es6</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/26/markdown/" class="archive-article-date">
-  	<time datetime="2017-10-26T07:34:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/26/markdown/">初识Markdown</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -304,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
